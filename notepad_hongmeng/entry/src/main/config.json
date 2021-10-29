@@ -11,7 +11,7 @@
   "module": {
     "package": "cn.hsp.notepad",
     "name": ".MyApplication",
-    "mainAbility": "cn.hsp.notepad.ui.MainAbility",
+    "mainAbility": "cn.hsp.notepad.ui.NoteListAbility",
     "deviceType": [
       "phone"
     ],
@@ -35,7 +35,7 @@
         ],
         "orientation": "unspecified",
         "visible": true,
-        "name": "cn.hsp.notepad.ui.MainAbility",
+        "name": "cn.hsp.notepad.ui.NoteListAbility",
         "icon": "$media:icon",
         "description": "$string:mainability_description",
         "label": "$string:entry_MainAbility",
