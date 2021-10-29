@@ -2,10 +2,11 @@ apply plugin: 'com.huawei.ohos.hap'
 apply plugin: 'com.huawei.ohos.decctest'
 //For instructions on signature configuration, see https://developer.harmonyos.com/cn/docs/documentation/doc-guides/ide_debug_device-0000001053822404#section1112183053510
 ohos {
-    compileSdkVersion 7
+    compileSdkVersion 5
     defaultConfig {
         compatibleSdkVersion 5
     }
+    compileOptions { annotationEnabled true }
     buildTypes {
         release {
             proguardOpt {
@@ -18,8 +19,7 @@ ohos {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar', '*.har'])
-    testImplementation 'junit:junit:4.13.1'
-    ohosTestImplementation 'com.huawei.ohos.testkit:runner:1.0.0.200'
+    annotationProcessor files("./libs/orm_annotations_java.jar", "./libs/orm_annotations_processor_java.jar")
 }
 decc {
     supportType = ['html','xml']
