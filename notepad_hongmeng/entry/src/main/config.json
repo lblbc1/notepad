@@ -43,9 +43,13 @@
         "launchType": "standard"
       },
       {
+        "orientation": "unspecified",
         "name": "cn.hsp.notepad.ui.AddNoteAbility",
-        "description": "",
-        "type": "page"
+        "icon": "$media:icon",
+        "description": "$string:entry_MainAbility",
+        "label": "$string:entry_MainAbility",
+        "type": "page",
+        "launchType": "standard"
       }
     ]
   }

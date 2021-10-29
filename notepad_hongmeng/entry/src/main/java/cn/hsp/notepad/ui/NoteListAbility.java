@@ -5,6 +5,7 @@ import cn.hsp.notepad.db.DbHelper;
 import cn.hsp.notepad.db.Note;
 import ohos.aafwk.ability.Ability;
 import ohos.aafwk.content.Intent;
+import ohos.aafwk.content.Operation;
 import ohos.agp.components.Component;
 import ohos.agp.components.ListContainer;
 
@@ -28,13 +29,19 @@ public class NoteListAbility extends Ability {
         NoteListItemProvider noteListItemProvider = new NoteListItemProvider(getData());
         listContainer.setItemProvider(noteListItemProvider);
     }
-    private void initAddBtn()
-    {
-        findComponentById(ResourceTable.Id_add_image).setClickedListener(new Component.ClickedListener() {
-            @Override
-            public void onClick(Component component) {
 
-            }
+    private void initAddBtn() {
+        findComponentById(ResourceTable.Id_add_image).setClickedListener(component -> {
+            Intent newIntent = new Intent();
+            Operation operation = new Intent.OperationBuilder()
+                    .withBundleName("cn.hsp.notepad")
+                    .withAbilityName("cn.hsp.notepad.AddNoteAbility")
+                    .build();
+            newIntent.setOperation(operation);
+//                newIntent.setParam("name","花生皮编程");
+//                newIntent.setParam("school","厦门大学");
+//                newIntent.setParam("major","计算机科学与技术");
+            startAbility(newIntent);
         });
     }
 
