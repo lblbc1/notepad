@@ -11,13 +11,12 @@ import ohos.agp.components.ListContainer;
 import java.util.ArrayList;
 import java.util.List;
 
-public class NoteListAbility extends Ability {
+public class BaseNoteAbility extends Ability {
     @Override
     public void onStart(Intent intent) {
         super.onStart(intent);
         super.setUIContent(ResourceTable.Layout_ability_note_list);
         initListContainer();
-        initAddBtn();
     }
 
     private void initListContainer() {

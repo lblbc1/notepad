@@ -41,6 +41,11 @@
         "label": "$string:entry_MainAbility",
         "type": "page",
         "launchType": "standard"
+      },
+      {
+        "name": "cn.hsp.notepad.ui.AddNoteAbility",
+        "description": "",
+        "type": "page"
       }
     ]
   }
