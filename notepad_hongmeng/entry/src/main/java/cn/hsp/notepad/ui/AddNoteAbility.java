@@ -5,6 +5,7 @@ import cn.hsp.notepad.db.DbHelper;
 import ohos.aafwk.ability.Ability;
 import ohos.aafwk.content.Intent;
 import ohos.agp.components.TextField;
+
 /**
  * 厦门大学计算机专业 | 前华为工程师
  * 分享编程技术，没啥深度，但看得懂，适合初学者。
@@ -26,7 +27,9 @@ public class AddNoteAbility extends Ability {
 
     void saveNoteAndClose() {
         String content = ((TextField) findComponentById(ResourceTable.Id_content_text_field)).getText();
-        DbHelper.getInstance().add(content);
+        if (!content.isEmpty()) {
+            DbHelper.getInstance().add(content);
+        }
         terminateAbility();
     }
 }

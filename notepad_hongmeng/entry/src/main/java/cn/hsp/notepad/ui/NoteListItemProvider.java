@@ -62,7 +62,7 @@ public class NoteListItemProvider extends BaseItemProvider {
         Intent newIntent = new Intent();
         Operation operation = new Intent.OperationBuilder()
                 .withBundleName("cn.hsp.notepad")
-                .withAbilityName(AddNoteAbility.class.getCanonicalName())
+                .withAbilityName(EditNoteAbility.class.getCanonicalName())
                 .build();
         newIntent.setOperation(operation);
         newIntent.setParam("noteId", noteId);

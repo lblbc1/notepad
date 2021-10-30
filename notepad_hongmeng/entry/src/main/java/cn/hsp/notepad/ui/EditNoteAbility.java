@@ -40,7 +40,9 @@ public class EditNoteAbility extends Ability {
 
     void saveNoteAndClose() {
         String content = contentTextField.getText();
-        DbHelper.getInstance().add(content);
+        if (!content.isEmpty()) {
+            DbHelper.getInstance().update(noteId, content);
+        }
         terminateAbility();
     }
 
