@@ -48,8 +48,8 @@ public class NoteListAbility extends Ability {
     }
 
     @Override
-    protected void onForeground(Intent intent) {
-        super.onForeground(intent);
+    protected void onActive() {
+        super.onActive();
         queryData();
     }
 }

@@ -6,6 +6,7 @@ import ohos.data.orm.OrmContext;
 import ohos.data.orm.OrmPredicates;
 
 import java.util.List;
+
 /**
  * 厦门大学计算机专业 | 前华为工程师
  * 分享编程技术，没啥深度，但看得懂，适合初学者。
@@ -52,9 +53,12 @@ public class DbHelper {
     }
 
     public void update(long noteId, String content) {
-        Note note = new Note(noteId, content);
-        ormContext.update(note);
-        ormContext.flush();
+        Note note = query(noteId);
+        if (note != null) {
+            note.setContent(content);
+            ormContext.update(note);
+            ormContext.flush();
+        }
     }
 
     public void delete(long noteId) {
