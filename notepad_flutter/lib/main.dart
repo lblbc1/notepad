@@ -18,6 +18,7 @@ class MyApp extends StatelessWidget {
 
     return MaterialApp(
       title: title,
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
           title: const Text(title),
