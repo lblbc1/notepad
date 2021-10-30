@@ -2,13 +2,10 @@ package cn.hsp.notepad.ui;
 
 import cn.hsp.notepad.ResourceTable;
 import cn.hsp.notepad.db.DbHelper;
-import cn.hsp.notepad.db.Note;
 import ohos.aafwk.ability.Ability;
 import ohos.aafwk.content.Intent;
 import ohos.aafwk.content.Operation;
 import ohos.agp.components.ListContainer;
-
-import java.util.List;
 
 /**
  * 厦门大学计算机专业 | 前华为工程师
@@ -17,19 +14,20 @@ import java.util.List;
  * 公众号：花生皮编程
  */
 public class NoteListAbility extends Ability {
+    private NoteListItemProvider noteListItemProvider;
+
     @Override
     public void onStart(Intent intent) {
         super.onStart(intent);
         super.setUIContent(ResourceTable.Layout_ability_note_list);
         initListContainer();
         initAddBtn();
+        queryData();
     }
 
     private void initListContainer() {
         ListContainer listContainer = (ListContainer) findComponentById(ResourceTable.Id_list_container);
-        DbHelper dbHelper = DbHelper.getInstance();
-        List<Note> dataList = dbHelper.query();
-        NoteListItemProvider noteListItemProvider = new NoteListItemProvider(dataList);
+        noteListItemProvider = new NoteListItemProvider();
         listContainer.setItemProvider(noteListItemProvider);
     }
 
@@ -43,5 +41,15 @@ public class NoteListAbility extends Ability {
             newIntent.setOperation(operation);
             startAbility(newIntent);
         });
+    }
+
+    private void queryData() {
+        noteListItemProvider.setData(DbHelper.getInstance().query());
+    }
+
+    @Override
+    protected void onForeground(Intent intent) {
+        super.onForeground(intent);
+        queryData();
     }
 }

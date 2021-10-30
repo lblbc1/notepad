@@ -40,8 +40,8 @@
         ohos:id="$+id:content_text_field"
         ohos:height="match_parent"
         ohos:width="match_parent"
+        ohos:hint="请输入内容"
         ohos:scrollable="true"
-        ohos:text="我是TextField"
         ohos:text_size="20fp"
         ohos:top_padding="20vp"/>
 

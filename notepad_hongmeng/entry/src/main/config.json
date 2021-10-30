@@ -52,10 +52,13 @@
         "launchType": "standard"
       },
       {
-        "icon": "",
+        "orientation": "unspecified",
         "name": "cn.hsp.notepad.ui.EditNoteAbility",
-        "description": "",
-        "type": ""
+        "icon": "$media:icon",
+        "description": "$string:entry_MainAbility",
+        "label": "$string:entry_MainAbility",
+        "type": "page",
+        "launchType": "standard"
       }
     ]
   }

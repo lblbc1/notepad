@@ -7,7 +7,9 @@ import ohos.aafwk.content.Operation;
 import ohos.agp.components.*;
 import ohos.app.Context;
 
+import java.util.ArrayList;
 import java.util.List;
+
 /**
  * 厦门大学计算机专业 | 前华为工程师
  * 分享编程技术，没啥深度，但看得懂，适合初学者。
@@ -15,21 +17,23 @@ import java.util.List;
  * 公众号：花生皮编程
  */
 public class NoteListItemProvider extends BaseItemProvider {
-    private final List<Note> dataList;
+    private final List<Note> mDataList = new ArrayList<>();
 
-    public NoteListItemProvider(List<Note> dataList) {
-        this.dataList = dataList;
+    public void setData(List<Note> dataList) {
+        mDataList.clear();
+        mDataList.addAll(dataList);
+        notifyDataChanged();
     }
 
     @Override
     public int getCount() {
-        return dataList == null ? 0 : dataList.size();
+        return mDataList.size();
     }
 
     @Override
     public Object getItem(int i) {
-        if (dataList != null && i >= 0 && i < dataList.size()) {
-            return dataList.get(i);
+        if (i >= 0 && i < mDataList.size()) {
+            return mDataList.get(i);
         }
         return null;
     }
@@ -47,7 +51,7 @@ public class NoteListItemProvider extends BaseItemProvider {
         } else {
             cpt = component;
         }
-        Note note = this.dataList.get(i);
+        Note note = this.mDataList.get(i);
         Text contentText = (Text) cpt.findComponentById(ResourceTable.Id_content_text);
         contentText.setText(note.getContent());
         cpt.setClickedListener(component1 -> gotoEditNote(componentContainer.getContext(), note.getId()));
