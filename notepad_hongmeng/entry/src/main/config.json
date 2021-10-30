@@ -50,6 +50,12 @@
         "label": "$string:entry_MainAbility",
         "type": "page",
         "launchType": "standard"
+      },
+      {
+        "icon": "",
+        "name": "cn.hsp.notepad.ui.EditNoteAbility",
+        "description": "",
+        "type": ""
       }
     ]
   }

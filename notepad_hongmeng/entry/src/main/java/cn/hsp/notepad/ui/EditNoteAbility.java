@@ -11,17 +11,26 @@ import ohos.agp.components.TextField;
  * Java | 安卓 | 前端 | 小程序 | 鸿蒙
  * 公众号：花生皮编程
  */
-public class AddNoteAbility extends Ability {
+public class EditNoteAbility extends Ability {
+    private Long noteId;
+
     @Override
     public void onStart(Intent intent) {
         super.onStart(intent);
-        super.setUIContent(ResourceTable.Layout_ability_add_note);
+        super.setUIContent(ResourceTable.Layout_ability_edit_note);
+        noteId = intent.getLongParam("noteId", 0);
         initListeners();
     }
 
     protected void initListeners() {
         findComponentById(ResourceTable.Id_back_image).setClickedListener(component -> terminateAbility());
         findComponentById(ResourceTable.Id_save_image).setClickedListener(component -> saveNoteAndClose());
+        findComponentById(ResourceTable.Id_del_image).setClickedListener(component -> delNote());
+    }
+
+    private void delNote() {
+        DbHelper.getInstance().delete(noteId);
+        terminateAbility();
     }
 
     void saveNoteAndClose() {

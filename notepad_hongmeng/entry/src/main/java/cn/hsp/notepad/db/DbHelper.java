@@ -6,19 +6,32 @@ import ohos.data.orm.OrmContext;
 import ohos.data.orm.OrmPredicates;
 
 import java.util.List;
-
+/**
+ * 厦门大学计算机专业 | 前华为工程师
+ * 分享编程技术，没啥深度，但看得懂，适合初学者。
+ * Java | 安卓 | 前端 | 小程序 | 鸿蒙
+ * 公众号：花生皮编程
+ */
 public class DbHelper {
+    private static DbHelper dbHelper = new DbHelper();
     private OrmContext ormContext;
+
+    private DbHelper() {
+    }
+
+    public static DbHelper getInstance() {
+        return dbHelper;
+    }
 
     public void initDb(Context context) {
         DatabaseHelper databaseHelper = new DatabaseHelper(context);
         ormContext = databaseHelper.getOrmContext("hspDb", "hspDb.db", NoteDatabase.class);
-        write();
     }
 
-    private void write() {
+    public void add(String content) {
         Note note = new Note();
-        note.setContent("花生皮编程");
+        note.setId(System.currentTimeMillis());
+        note.setContent(content);
         ormContext.insert(note);
         ormContext.flush();
     }
@@ -28,24 +41,25 @@ public class DbHelper {
         return ormContext.query(ormPredicates);
     }
 
-    private void modify() {
-        //将查询出来的数据值修改后更新到数据库
-        Note note = query().get(0);
-        if (note == null) {
-            return;
+    public Note query(long noteId) {
+        OrmPredicates ormPredicates = ormContext.where(Note.class).equalTo("id", noteId + "");
+        List<Note> noteList = ormContext.query(ormPredicates);
+        Note note = null;
+        if (!noteList.isEmpty()) {
+            note = noteList.get(0);
         }
-        note.setContent("花生皮編程2");
+        return note;
+    }
+
+    public void update(long noteId, String content) {
+        Note note = new Note(noteId, content);
         ormContext.update(note);
         ormContext.flush();
     }
 
-    private void del() {
-        //将查询出来的数据值从数据库中删除
-        Note note = query().get(0);
-        if (note == null) {
-            return;
-        }
-        ormContext.delete(note);
+    public void delete(long noteId) {
+        OrmPredicates ormPredicates = ormContext.where(Note.class).equalTo("id", noteId + "");
+        ormContext.delete(ormPredicates);
         ormContext.flush();
     }
 }

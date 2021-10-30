@@ -2,10 +2,18 @@ package cn.hsp.notepad.ui;
 
 import cn.hsp.notepad.ResourceTable;
 import cn.hsp.notepad.db.Note;
+import ohos.aafwk.content.Intent;
+import ohos.aafwk.content.Operation;
 import ohos.agp.components.*;
+import ohos.app.Context;
 
 import java.util.List;
-
+/**
+ * 厦门大学计算机专业 | 前华为工程师
+ * 分享编程技术，没啥深度，但看得懂，适合初学者。
+ * Java | 安卓 | 前端 | 小程序 | 鸿蒙
+ * 公众号：花生皮编程
+ */
 public class NoteListItemProvider extends BaseItemProvider {
     private final List<Note> dataList;
 
@@ -39,9 +47,21 @@ public class NoteListItemProvider extends BaseItemProvider {
         } else {
             cpt = component;
         }
-        Note data = this.dataList.get(i);
-        Text titleText = (Text) cpt.findComponentById(ResourceTable.Id_titleText);
-        titleText.setText(data.getContent());
+        Note note = this.dataList.get(i);
+        Text contentText = (Text) cpt.findComponentById(ResourceTable.Id_content_text);
+        contentText.setText(note.getContent());
+        cpt.setClickedListener(component1 -> gotoEditNote(componentContainer.getContext(), note.getId()));
         return cpt;
+    }
+
+    private void gotoEditNote(Context context, long noteId) {
+        Intent newIntent = new Intent();
+        Operation operation = new Intent.OperationBuilder()
+                .withBundleName("cn.hsp.notepad")
+                .withAbilityName(AddNoteAbility.class.getCanonicalName())
+                .build();
+        newIntent.setOperation(operation);
+        newIntent.setParam("noteId", noteId);
+        context.startAbility(newIntent, 0);
     }
 }

@@ -6,14 +6,16 @@ import cn.hsp.notepad.db.Note;
 import ohos.aafwk.ability.Ability;
 import ohos.aafwk.content.Intent;
 import ohos.aafwk.content.Operation;
-import ohos.agp.components.Component;
 import ohos.agp.components.ListContainer;
-import ohos.hiviewdfx.HiLog;
-import ohos.hiviewdfx.HiLogLabel;
 
-import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 厦门大学计算机专业 | 前华为工程师
+ * 分享编程技术，没啥深度，但看得懂，适合初学者。
+ * Java | 安卓 | 前端 | 小程序 | 鸿蒙
+ * 公众号：花生皮编程
+ */
 public class NoteListAbility extends Ability {
     @Override
     public void onStart(Intent intent) {
@@ -25,10 +27,9 @@ public class NoteListAbility extends Ability {
 
     private void initListContainer() {
         ListContainer listContainer = (ListContainer) findComponentById(ResourceTable.Id_list_container);
-        DbHelper dbHelper = new DbHelper();
-        dbHelper.initDb(this);
+        DbHelper dbHelper = DbHelper.getInstance();
         List<Note> dataList = dbHelper.query();
-        NoteListItemProvider noteListItemProvider = new NoteListItemProvider(getData());
+        NoteListItemProvider noteListItemProvider = new NoteListItemProvider(dataList);
         listContainer.setItemProvider(noteListItemProvider);
     }
 
@@ -40,18 +41,7 @@ public class NoteListAbility extends Ability {
                     .withAbilityName(AddNoteAbility.class.getCanonicalName())
                     .build();
             newIntent.setOperation(operation);
-//                newIntent.setParam("name","花生皮编程");
-//                newIntent.setParam("school","厦门大学");
-//                newIntent.setParam("major","计算机科学与技术");
             startAbility(newIntent);
         });
-    }
-
-    private List<Note> getData() {
-        List<Note> dataList = new ArrayList<>();
-        for (int i = 1; i <= 20; i++) {
-            dataList.add(new Note("数据-" + (i)));
-        }
-        return dataList;
     }
 }
