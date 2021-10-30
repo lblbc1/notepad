@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">记事本</string>
+    <string name="ok">OK</string>
+    <string name="trash">删除</string>
+    <string name="add_note">新增</string>
+    <string name="edit_note">编辑</string>
+</resources>
