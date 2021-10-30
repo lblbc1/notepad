@@ -12,6 +12,7 @@ import ohos.agp.components.ListContainer;
 import java.util.ArrayList;
 import java.util.List;
 
+/** @noinspection AbilityRegisterCheck*/
 public class BaseNoteAbility extends Ability {
     @Override
     public void onStart(Intent intent) {
