@@ -15,6 +15,7 @@ import ohos.agp.components.TextField;
  */
 public class EditNoteAbility extends Ability {
     private Long noteId;
+    private Note note;
     private TextField contentTextField;
 
     @Override
@@ -40,14 +41,15 @@ public class EditNoteAbility extends Ability {
 
     void saveNoteAndClose() {
         String content = contentTextField.getText();
-        if (!content.isEmpty()) {
-            DbHelper.getInstance().update(noteId, content);
+        if (!content.isEmpty() && note != null) {
+            note.setContent(content);
+            DbHelper.getInstance().update(note);
         }
         terminateAbility();
     }
 
     private void queryData() {
-        Note note = DbHelper.getInstance().query(noteId);
+        note = DbHelper.getInstance().query(noteId);
         if (note != null) {
             contentTextField.setText(note.getContent());
         }

@@ -52,13 +52,9 @@ public class DbHelper {
         return note;
     }
 
-    public void update(long noteId, String content) {
-        Note note = query(noteId);
-        if (note != null) {
-            note.setContent(content);
-            ormContext.update(note);
-            ormContext.flush();
-        }
+    public void update(Note note) {
+        ormContext.update(note);
+        ormContext.flush();
     }
 
     public void delete(long noteId) {
