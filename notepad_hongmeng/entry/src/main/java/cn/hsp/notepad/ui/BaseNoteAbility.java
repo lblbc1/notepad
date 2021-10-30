@@ -5,6 +5,7 @@ import cn.hsp.notepad.db.DbHelper;
 import cn.hsp.notepad.db.Note;
 import ohos.aafwk.ability.Ability;
 import ohos.aafwk.content.Intent;
+import ohos.aafwk.content.Operation;
 import ohos.agp.components.Component;
 import ohos.agp.components.ListContainer;
 
@@ -16,6 +17,14 @@ public class BaseNoteAbility extends Ability {
     public void onStart(Intent intent) {
         super.onStart(intent);
         super.setUIContent(ResourceTable.Layout_ability_add_edit_note);
+        initTitleBar();
     }
+
+    private void initTitleBar() {
+        findComponentById(ResourceTable.Id_back_image).setClickedListener(component -> {
+            this.terminateAbility();
+        });
+    }
+
 
 }

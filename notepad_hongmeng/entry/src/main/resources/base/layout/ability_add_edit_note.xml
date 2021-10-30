@@ -11,7 +11,7 @@
         ohos:height="match_content"
         ohos:width="match_parent"
         ohos:orientation="horizontal"
-        ohos:top_margin="20vp">
+        ohos:top_margin="5vp">
 
         <StackLayout
             ohos:height="match_content"
