@@ -1,10 +1,10 @@
-package cn.cxy.notepad.db
+package cn.hsp.notepad.db
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import cn.cxy.notepad.App
+import cn.hsp.notepad.App
 /**
  * 厦门大学计算机专业 | 前华为工程师
  * 分享编程技术，没啥深度，但看得懂，适合初学者。

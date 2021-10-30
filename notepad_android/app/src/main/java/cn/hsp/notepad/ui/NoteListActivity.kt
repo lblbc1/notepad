@@ -1,12 +1,12 @@
-package cn.cxy.notepad.ui
+package cn.hsp.notepad.ui
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
-import cn.cxy.notepad.R
-import cn.cxy.notepad.db.NoteRepository
+import cn.hsp.notepad.R
+import cn.hsp.notepad.db.NoteRepository
 import kotlinx.android.synthetic.main.activity_note_list.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope

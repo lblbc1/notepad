@@ -1,4 +1,4 @@
-package cn.cxy.notepad
+package cn.hsp.notepad
 
 import android.annotation.SuppressLint
 import android.app.Application

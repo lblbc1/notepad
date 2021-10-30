@@ -1,4 +1,4 @@
-package cn.cxy.notepad.db
+package cn.hsp.notepad.db
 
 import android.os.Parcelable
 import androidx.room.Entity

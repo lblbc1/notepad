@@ -1,4 +1,4 @@
-package cn.cxy.notepad.ui
+package cn.hsp.notepad.ui
 
 import android.content.Context
 import android.content.Intent
@@ -6,8 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import cn.cxy.notepad.R
-import cn.cxy.notepad.db.Note
+import cn.hsp.notepad.R
+import cn.hsp.notepad.db.Note
 import kotlinx.android.synthetic.main.item_note.view.*
 
 /**
