@@ -43,6 +43,7 @@
     </DirectionalLayout>
 
     <TextField
+        ohos:id="$+id:content_text_field"
         ohos:height="match_parent"
         ohos:width="match_parent"
         ohos:hint="请输入内容"
