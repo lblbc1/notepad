@@ -15,7 +15,7 @@ public class BaseNoteAbility extends Ability {
     @Override
     public void onStart(Intent intent) {
         super.onStart(intent);
-        super.setUIContent(ResourceTable.Layout_ability_note_list);
+        super.setUIContent(ResourceTable.Layout_ability_add_edit_note);
     }
 
 }

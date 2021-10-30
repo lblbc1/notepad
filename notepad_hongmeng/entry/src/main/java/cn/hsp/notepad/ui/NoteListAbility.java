@@ -8,6 +8,8 @@ import ohos.aafwk.content.Intent;
 import ohos.aafwk.content.Operation;
 import ohos.agp.components.Component;
 import ohos.agp.components.ListContainer;
+import ohos.hiviewdfx.HiLog;
+import ohos.hiviewdfx.HiLogLabel;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,7 +37,7 @@ public class NoteListAbility extends Ability {
             Intent newIntent = new Intent();
             Operation operation = new Intent.OperationBuilder()
                     .withBundleName("cn.hsp.notepad")
-                    .withAbilityName("cn.hsp.notepad.AddNoteAbility")
+                    .withAbilityName(AddNoteAbility.class.getCanonicalName())
                     .build();
             newIntent.setOperation(operation);
 //                newIntent.setParam("name","花生皮编程");
