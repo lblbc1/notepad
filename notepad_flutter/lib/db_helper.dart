@@ -6,85 +6,83 @@ import 'package:sqflite/sqflite.dart';
 /// Java | 安卓 | 前端 | Flutter | iOS | 小程序 | 鸿蒙
 /// 公众号：花生皮编程
 
-const String tableBook = 'book';
+const String tableNote = 'note';
 const String columnId = '_id';
-const String columnName = 'name';
+const String columnContent = 'content';
 
-class Book {
+class Note {
   int id = 0;
-  String name = "";
+  String content = "";
 
   Map<String, dynamic> toMap() {
     var map = <String, dynamic>{
-      columnName: name,
+      columnContent: content,
     };
-    map[columnId] = id;
     return map;
   }
-}
 
-  Book(this.id, this.name);
+  Note(this.content);
 
-  Book.fromMap(Map<String, dynamic> map) {
+  Note.fromMap(Map<String, dynamic> map) {
     id = map[columnId];
-    name = map[columnName];
+    content = map[columnContent];
   }
 }
 
-class BookDatabase {
+class NoteDatabase {
   late Database db;
 
   openSqlite() async {
     var databasesPath = await getDatabasesPath();
-    String path = join(databasesPath, 'book.db');
+    String path = join(databasesPath, 'note.db');
 
     db = await openDatabase(path, version: 1,
         onCreate: (Database db, int version) async {
       await db.execute('''
-          CREATE TABLE $tableBook (
-            $columnId INTEGER PRIMARY KEY, 
-            $columnName TEXT)
+          CREATE TABLE $tableNote (
+            $columnId INTEGER PRIMARY KEY AUTOINCREMENT, 
+            $columnContent TEXT)
           ''');
     });
   }
 
-  Future<Book> insert(Book book) async {
-    book.id = await db.insert(tableBook, book.toMap());
-    return book;
+  Future<Note> insert(Note note) async {
+    note.id = await db.insert(tableNote, note.toMap());
+    return note;
   }
 
-  Future<Book?> query(int id) async {
-    List<Map<String,dynamic>> maps = await db.query(tableBook,
-        columns: [columnId, columnName],
+  Future<Note?> query(int id) async {
+    List<Map<String,dynamic>> maps = await db.query(tableNote,
+        columns: [columnId, columnContent],
         where: '$columnId = ?',
         whereArgs: [id]);
     if (maps.isNotEmpty) {
-      return Book.fromMap(maps.first);
+      return Note.fromMap(maps.first);
     }
     return null;
   }
 
-  Future<List<Book>> queryAll() async {
-    List<Map<String,dynamic>> maps = await db.query(tableBook, columns: [columnId, columnName]);
-    List<Book> books = [];
+  Future<List<Note>> queryAll() async {
+    List<Map<String,dynamic>> maps = await db.query(tableNote, columns: [columnId, columnContent]);
+    List<Note> notes = [];
 
     if (maps.isEmpty) {
-      return books;
+      return notes;
     }
 
     for (int i = 0; i < maps.length; i++) {
-      books.add(Book.fromMap(maps[i]));
+      notes.add(Note.fromMap(maps[i]));
     }
-    return books;
+    return notes;
   }
 
   Future<int> delete(int id) async {
-    return await db.delete(tableBook, where: '$columnId = ?', whereArgs: [id]);
+    return await db.delete(tableNote, where: '$columnId = ?', whereArgs: [id]);
   }
 
-  Future<int> update(Book book) async {
-    return await db.update(tableBook, book.toMap(),
-        where: '$columnId = ?', whereArgs: [book.id]);
+  Future<int> update(Note note) async {
+    return await db.update(tableNote, note.toMap(),
+        where: '$columnId = ?', whereArgs: [note.id]);
   }
 
   close() async {

@@ -1,5 +1,8 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'add_note.dart';
 import 'db_helper.dart';
+import 'edit_note.dart';
 
 /// 厦门大学计算机专业 | 前华为工程师
 /// 分享编程技术，没啥深度，但看得懂，适合初学者。
@@ -13,113 +16,126 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
       title: '花生皮编程',
-      home: MyHomePage(title: '花生皮编程'),
+      home: NoteListPage(),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
-  final String title;
+class NoteListPage extends StatelessWidget {
+  const NoteListPage();
 
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: '花生皮编程',
+      home: NoteListWidget(),
+    );
+  }
 }
 
-class _MyHomePageState extends State<MyHomePage> {
-  BookDatabase bookSqlite = BookDatabase();
-  var name = "";
+class NoteListWidget extends StatefulWidget {
+  NoteListWidget();
+
+  @override
+  createState() => _NoteListState();
+}
+
+class _NoteListState extends State<NoteListWidget> {
+  List _notes = [];
 
   @override
   void initState() {
     super.initState();
-    addData();
+    queryData();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        title: Text("花生皮笔记"),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: gotoAddNotePage,
+        child: Icon(Icons.add),
       ),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              name,
-            ),
-            ElevatedButton(
-              child: Text('写数据'),
-              onPressed: () {
-                addData();
-              },
-            ),
-            ElevatedButton(
-              child: Text('读数据'),
-              onPressed: () {
-                queryData();
-              },
-            ),
-            ElevatedButton(
-              child: Text('改数据'),
-              onPressed: () {
-                modifyData();
-              },
-            ),
-            ElevatedButton(
-              child: Text('删数据'),
-              onPressed: () {
-                deleteData();
-              },
-            )
-          ],
-        ),
+        child: getBody(),
       ),
     );
   }
 
-  void addData() async {
-    await bookSqlite.openSqlite();
-    await bookSqlite.insert(Book(0, "花生皮编程"));
-    await bookSqlite.close();
+  gotoAddNotePage() {
+    Navigator.push(
+            context, MaterialPageRoute(builder: (context) => AddNotePage()))
+        .then((value) => queryData());
+  }
+
+  queryData() async {
+    NoteDatabase noteDataBase = NoteDatabase();
+    await noteDataBase.openSqlite();
+    List<Note> notes = await noteDataBase.queryAll();
+    await noteDataBase.close();
     setState(() {
-      name = "已成功写入数据";
+      _notes = notes;
     });
   }
 
-  void queryData() async {
-    await bookSqlite.openSqlite();
-    Book? book = await bookSqlite.query(0);
-    await bookSqlite.close();
-    setState(() {
-      if (book == null) {
-        name = "数据不存在";
-      } else {
-        name = book.name;
-      }
-    });
+  getItem(note) {
+    var row = Container(
+      margin: EdgeInsets.all(4.0),
+      child: InkWell(
+        onTap: () {
+          onRowClick(note);
+        },
+        child: buildRow(note),
+      ),
+    );
+    return Card(
+      child: row,
+    );
   }
 
-  void modifyData() async {
-    await bookSqlite.openSqlite();
-    Book? book = await bookSqlite.query(0);
-    if (book != null) {
-      book.name = "花生皮编程2";
-      await bookSqlite.update(book);
-      await bookSqlite.close();
-      setState(() {
-        name = book.name;
-      });
+  Row buildRow(Note note) {
+    return Row(
+      children: <Widget>[
+        Expanded(
+            child: Container(
+          margin: EdgeInsets.only(left: 8.0),
+          height: 40.0,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Text(
+                note.content,
+                style: TextStyle(
+                  fontSize: 18.0,
+                ),
+                maxLines: 1,
+              ),
+            ],
+          ),
+        ))
+      ],
+    );
+  }
+
+  getBody() {
+    if (_notes.isNotEmpty) {
+      return ListView.builder(
+          itemCount: _notes.length,
+          itemBuilder: (BuildContext context, int position) {
+            return getItem(_notes[position]);
+          });
     }
   }
 
-  void deleteData() async {
-    await bookSqlite.openSqlite();
-    await bookSqlite.delete(0);
-    await bookSqlite.close();
-    setState(() {
-      name = "数据已删除";
-    });
+  onRowClick(Note onte) {
+    Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) => EditNotePage(noteId: onte.id)))
+        .then((value) => queryData());
   }
 }
