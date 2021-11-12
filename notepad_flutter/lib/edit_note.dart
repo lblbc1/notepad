@@ -100,6 +100,7 @@ class _EditNotePageState extends State<EditNotePage> {
       await _noteDataBase.update(note);
       await _noteDataBase.close();
     }
+    Navigator.of(context).pop("");
   }
 
   deleteNote() async {
