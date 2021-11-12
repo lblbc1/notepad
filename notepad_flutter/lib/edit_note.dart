@@ -7,25 +7,48 @@ import 'db_helper.dart';
 /// 分享编程技术，没啥深度，但看得懂，适合初学者。
 /// Java | 安卓 | 前端 | Flutter | iOS | 小程序 | 鸿蒙
 /// 公众号：花生皮编程
-class AddNotePage extends StatefulWidget {
-  AddNotePage({Key? key}) : super(key: key);
+class EditNotePage extends StatefulWidget {
+  final int noteId;
+
+  EditNotePage({Key? key, required this.noteId}) : super(key: key);
 
   @override
-  createState() => _AddNotePageState();
+  createState() => _EditNotePageState(noteId);
 }
 
-class _AddNotePageState extends State<AddNotePage> {
+class _EditNotePageState extends State<EditNotePage> {
+  int _noteId = 0;
   final NoteDatabase _noteDataBase = NoteDatabase();
-  final TextEditingController _contentController = TextEditingController();
-  String content = "";
+  TextEditingController _contentController = TextEditingController();
+
+  _EditNotePageState(int noteId) {
+    _noteId = noteId;
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    queryData();
+  }
+
+  queryData() async {
+    NoteDatabase noteDataBase = NoteDatabase();
+    await noteDataBase.openSqlite();
+    Note? note = await noteDataBase.query(_noteId);
+    await noteDataBase.close();
+    if (note != null) {
+      setState(() {
+        _contentController.text = note.content;
+      });
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("新建笔记"),
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back),
+          icon: Icon(Icons.arrow_back),
           onPressed: () {
             Navigator.pop(context);
           },
@@ -34,7 +57,13 @@ class _AddNotePageState extends State<AddNotePage> {
           IconButton(
             icon: const Icon(Icons.done),
             onPressed: () {
-              addNote();
+              modifyNote();
+            },
+          ),
+          IconButton(
+            icon: const Icon(Icons.delete),
+            onPressed: () {
+              deleteNote();
             },
           )
         ],
@@ -54,7 +83,7 @@ class _AddNotePageState extends State<AddNotePage> {
         Expanded(
             child: TextField(
           maxLines: null,
-          decoration: const InputDecoration.collapsed(
+          decoration: const InputDecoration(
               hintText: "请输入笔记", border: InputBorder.none),
           controller: _contentController,
         )),
@@ -62,11 +91,22 @@ class _AddNotePageState extends State<AddNotePage> {
     );
   }
 
-  addNote() async {
+  modifyNote() async {
     String content = _contentController.text;
     await _noteDataBase.openSqlite();
-    await _noteDataBase.insert(Note(content));
+    Note? note = await _noteDataBase.query(_noteId);
+    if (note != null) {
+      note.content = content;
+      await _noteDataBase.update(note);
+      await _noteDataBase.close();
+    }
+  }
+
+  deleteNote() async {
+    await _noteDataBase.openSqlite();
+    await _noteDataBase.delete(_noteId);
     await _noteDataBase.close();
     Navigator.of(context).pop("");
+    // Navigator.of(context).popUntil((route) => route.isFirst); //回到首页
   }
 }
