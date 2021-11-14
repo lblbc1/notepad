@@ -30,15 +30,15 @@ struct NoteList : View {
     }
 }
 
-//#if DEBUG
-//struct NoteList_Previews : PreviewProvider {
-//    static var previews: some View {
-//        ForEach(["iPhone SE", "iPhone XS Max"], id: \.self) { deviceName in
-//            NoteList()
-//                .environmentObject(UserData())
-//                .previewDevice(PreviewDevice(rawValue: deviceName))
-//                .previewDisplayName(deviceName)
-//        }
-//    }
-//}
-//#endif
+#if DEBUG
+struct NoteList_Previews : PreviewProvider {
+    static var previews: some View {
+        ForEach(["iPhone SE", "iPhone XS Max"], id: \.self) { deviceName in
+            NoteList()
+                .environmentObject(UserData())
+                .previewDevice(PreviewDevice(rawValue: deviceName))
+                .previewDisplayName(deviceName)
+        }
+    }
+}
+#endif

@@ -39,11 +39,11 @@ struct NoteDetail : View {
     }
 }
 
-//#if DEBUG
-//struct NoteDetail_Previews : PreviewProvider {
-//    static var previews: some View {
-//        NoteDetail(note: NoteData.shared.notes[0])
-//            .environmentObject(UserData())
-//    }
-//}
-//#endif
+#if DEBUG
+struct NoteDetail_Previews : PreviewProvider {
+    static var previews: some View {
+        NoteDetail(note: NoteData.shared.notes[0])
+            .environmentObject(UserData())
+    }
+}
+#endif
