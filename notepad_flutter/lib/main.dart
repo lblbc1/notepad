@@ -1,12 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
 import 'add_note.dart';
 import 'db_helper.dart';
 import 'edit_note.dart';
 
 /// 厦门大学计算机专业 | 前华为工程师
-/// 分享编程技术，没啥深度，但看得懂，适合初学者。
-/// Java | 安卓 | 前端 | Flutter | iOS | 小程序 | 鸿蒙
+/// 专注《零基础学编程系列》https://cxyxy.blog.csdn.net/article/details/121134634
+/// 包含：Java | 安卓 | 前端 | Flutter | iOS | 小程序 | 鸿蒙
 /// 公众号：花生皮编程
 void main() => runApp(MyApp());
 
@@ -66,9 +67,7 @@ class _NoteListState extends State<NoteListWidget> {
   }
 
   gotoAddNotePage() {
-    Navigator.push(
-            context, MaterialPageRoute(builder: (context) => AddNotePage()))
-        .then((value) => queryData());
+    Navigator.push(context, MaterialPageRoute(builder: (context) => AddNotePage())).then((value) => queryData());
   }
 
   queryData() async {
@@ -132,10 +131,7 @@ class _NoteListState extends State<NoteListWidget> {
   }
 
   onRowClick(Note onte) {
-    Navigator.push(
-            context,
-            MaterialPageRoute(
-                builder: (context) => EditNotePage(noteId: onte.id)))
+    Navigator.push(context, MaterialPageRoute(builder: (context) => EditNotePage(noteId: onte.id)))
         .then((value) => queryData());
   }
 }

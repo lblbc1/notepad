@@ -2,8 +2,8 @@ import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
 
 /// 厦门大学计算机专业 | 前华为工程师
-/// 分享编程技术，没啥深度，但看得懂，适合初学者。
-/// Java | 安卓 | 前端 | Flutter | iOS | 小程序 | 鸿蒙
+/// 专注《零基础学编程系列》https://cxyxy.blog.csdn.net/article/details/121134634
+/// 包含：Java | 安卓 | 前端 | Flutter | iOS | 小程序 | 鸿蒙
 /// 公众号：花生皮编程
 
 const String tableNote = 'note';
@@ -36,8 +36,7 @@ class NoteDatabase {
     var databasesPath = await getDatabasesPath();
     String path = join(databasesPath, 'note.db');
 
-    db = await openDatabase(path, version: 1,
-        onCreate: (Database db, int version) async {
+    db = await openDatabase(path, version: 1, onCreate: (Database db, int version) async {
       await db.execute('''
           CREATE TABLE $tableNote (
             $columnId INTEGER PRIMARY KEY AUTOINCREMENT, 
@@ -52,10 +51,8 @@ class NoteDatabase {
   }
 
   Future<Note?> query(int id) async {
-    List<Map<String,dynamic>> maps = await db.query(tableNote,
-        columns: [columnId, columnContent],
-        where: '$columnId = ?',
-        whereArgs: [id]);
+    List<Map<String, dynamic>> maps =
+        await db.query(tableNote, columns: [columnId, columnContent], where: '$columnId = ?', whereArgs: [id]);
     if (maps.isNotEmpty) {
       return Note.fromMap(maps.first);
     }
@@ -63,7 +60,7 @@ class NoteDatabase {
   }
 
   Future<List<Note>> queryAll() async {
-    List<Map<String,dynamic>> maps = await db.query(tableNote, columns: [columnId, columnContent]);
+    List<Map<String, dynamic>> maps = await db.query(tableNote, columns: [columnId, columnContent]);
     List<Note> notes = [];
 
     if (maps.isEmpty) {
@@ -81,8 +78,7 @@ class NoteDatabase {
   }
 
   Future<int> update(Note note) async {
-    return await db.update(tableNote, note.toMap(),
-        where: '$columnId = ?', whereArgs: [note.id]);
+    return await db.update(tableNote, note.toMap(), where: '$columnId = ?', whereArgs: [note.id]);
   }
 
   close() async {
