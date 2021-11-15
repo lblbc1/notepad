@@ -2,7 +2,7 @@
 //  notepad_iosApp.swift
 //  notepad_ios
 //
-//  Created by jerry on 2021/11/14.
+//  Created by jerry on 2021/11/15.
 //
 
 import SwiftUI
@@ -11,7 +11,7 @@ import SwiftUI
 struct notepad_iosApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView().environmentObject(UserData())
+            NoteList().environmentObject(UserData())
         }
     }
 }

@@ -7,34 +7,34 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C49A40FC2740802C00F4714C /* notepad_iosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49A40FB2740802C00F4714C /* notepad_iosApp.swift */; };
-		C49A40FE2740802C00F4714C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49A40FD2740802C00F4714C /* ContentView.swift */; };
-		C49A41002740802E00F4714C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C49A40FF2740802E00F4714C /* Assets.xcassets */; };
-		C49A41032740802E00F4714C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C49A41022740802E00F4714C /* Preview Assets.xcassets */; };
-		C49A410B274080B500F4714C /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49A410A274080B500F4714C /* UserData.swift */; };
-		C49A410D274080E000F4714C /* NoteData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49A410C274080E000F4714C /* NoteData.swift */; };
-		C49A410F2740810000F4714C /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49A410E2740810000F4714C /* Note.swift */; };
-		C49A41142740813A00F4714C /* NoteDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49A41112740813A00F4714C /* NoteDetail.swift */; };
-		C49A41152740813A00F4714C /* NoteList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49A41122740813A00F4714C /* NoteList.swift */; };
-		C49A41162740813A00F4714C /* NoteRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49A41132740813A00F4714C /* NoteRow.swift */; };
+		C49A416227429AF900F4714C /* notepad_iosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49A416127429AF900F4714C /* notepad_iosApp.swift */; };
+		C49A416427429AF900F4714C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49A416327429AF900F4714C /* ContentView.swift */; };
+		C49A416627429AFA00F4714C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C49A416527429AFA00F4714C /* Assets.xcassets */; };
+		C49A416927429AFA00F4714C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C49A416827429AFA00F4714C /* Preview Assets.xcassets */; };
+		C49A417227429B4600F4714C /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49A417127429B4600F4714C /* Note.swift */; };
+		C49A417427429B9C00F4714C /* NoteData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49A417327429B9C00F4714C /* NoteData.swift */; };
+		C49A417627429D2700F4714C /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49A417527429D2700F4714C /* UserData.swift */; };
+		C49A417827429E0700F4714C /* NoteList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49A417727429E0700F4714C /* NoteList.swift */; };
+		C49A417A27429E9100F4714C /* NoteDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49A417927429E9100F4714C /* NoteDetail.swift */; };
+		C49A417D2742A07C00F4714C /* NoteRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49A417C2742A07C00F4714C /* NoteRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		C49A40F82740802C00F4714C /* notepad_ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = notepad_ios.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		C49A40FB2740802C00F4714C /* notepad_iosApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = notepad_iosApp.swift; sourceTree = "<group>"; };
-		C49A40FD2740802C00F4714C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		C49A40FF2740802E00F4714C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		C49A41022740802E00F4714C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		C49A410A274080B500F4714C /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
-		C49A410C274080E000F4714C /* NoteData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteData.swift; sourceTree = "<group>"; };
-		C49A410E2740810000F4714C /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
-		C49A41112740813A00F4714C /* NoteDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteDetail.swift; sourceTree = "<group>"; };
-		C49A41122740813A00F4714C /* NoteList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteList.swift; sourceTree = "<group>"; };
-		C49A41132740813A00F4714C /* NoteRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteRow.swift; sourceTree = "<group>"; };
+		C49A415E27429AF900F4714C /* notepad_ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = notepad_ios.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C49A416127429AF900F4714C /* notepad_iosApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = notepad_iosApp.swift; sourceTree = "<group>"; };
+		C49A416327429AF900F4714C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		C49A416527429AFA00F4714C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C49A416827429AFA00F4714C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C49A417127429B4600F4714C /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
+		C49A417327429B9C00F4714C /* NoteData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteData.swift; sourceTree = "<group>"; };
+		C49A417527429D2700F4714C /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
+		C49A417727429E0700F4714C /* NoteList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteList.swift; sourceTree = "<group>"; };
+		C49A417927429E9100F4714C /* NoteDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDetail.swift; sourceTree = "<group>"; };
+		C49A417C2742A07C00F4714C /* NoteRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		C49A40F52740802C00F4714C /* Frameworks */ = {
+		C49A415B27429AF900F4714C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -44,59 +44,59 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		C49A40EF2740802C00F4714C = {
+		C49A415527429AF900F4714C = {
 			isa = PBXGroup;
 			children = (
-				C49A40FA2740802C00F4714C /* notepad_ios */,
-				C49A40F92740802C00F4714C /* Products */,
+				C49A416027429AF900F4714C /* notepad_ios */,
+				C49A415F27429AF900F4714C /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		C49A40F92740802C00F4714C /* Products */ = {
+		C49A415F27429AF900F4714C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C49A40F82740802C00F4714C /* notepad_ios.app */,
+				C49A415E27429AF900F4714C /* notepad_ios.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		C49A40FA2740802C00F4714C /* notepad_ios */ = {
+		C49A416027429AF900F4714C /* notepad_ios */ = {
 			isa = PBXGroup;
 			children = (
-				C49A41102740811A00F4714C /* views */,
-				C49A41092740808000F4714C /* models */,
-				C49A40FB2740802C00F4714C /* notepad_iosApp.swift */,
-				C49A40FD2740802C00F4714C /* ContentView.swift */,
-				C49A40FF2740802E00F4714C /* Assets.xcassets */,
-				C49A41012740802E00F4714C /* Preview Content */,
+				C49A417027429B2700F4714C /* views */,
+				C49A416F27429B1F00F4714C /* models */,
+				C49A416127429AF900F4714C /* notepad_iosApp.swift */,
+				C49A416327429AF900F4714C /* ContentView.swift */,
+				C49A416527429AFA00F4714C /* Assets.xcassets */,
+				C49A416727429AFA00F4714C /* Preview Content */,
 			);
 			path = notepad_ios;
 			sourceTree = "<group>";
 		};
-		C49A41012740802E00F4714C /* Preview Content */ = {
+		C49A416727429AFA00F4714C /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
-				C49A41022740802E00F4714C /* Preview Assets.xcassets */,
+				C49A416827429AFA00F4714C /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		C49A41092740808000F4714C /* models */ = {
+		C49A416F27429B1F00F4714C /* models */ = {
 			isa = PBXGroup;
 			children = (
-				C49A410A274080B500F4714C /* UserData.swift */,
-				C49A410C274080E000F4714C /* NoteData.swift */,
-				C49A410E2740810000F4714C /* Note.swift */,
+				C49A417127429B4600F4714C /* Note.swift */,
+				C49A417327429B9C00F4714C /* NoteData.swift */,
+				C49A417527429D2700F4714C /* UserData.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
 		};
-		C49A41102740811A00F4714C /* views */ = {
+		C49A417027429B2700F4714C /* views */ = {
 			isa = PBXGroup;
 			children = (
-				C49A41112740813A00F4714C /* NoteDetail.swift */,
-				C49A41122740813A00F4714C /* NoteList.swift */,
-				C49A41132740813A00F4714C /* NoteRow.swift */,
+				C49A417727429E0700F4714C /* NoteList.swift */,
+				C49A417927429E9100F4714C /* NoteDetail.swift */,
+				C49A417C2742A07C00F4714C /* NoteRow.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -104,13 +104,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		C49A40F72740802C00F4714C /* notepad_ios */ = {
+		C49A415D27429AF900F4714C /* notepad_ios */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C49A41062740802E00F4714C /* Build configuration list for PBXNativeTarget "notepad_ios" */;
+			buildConfigurationList = C49A416C27429AFA00F4714C /* Build configuration list for PBXNativeTarget "notepad_ios" */;
 			buildPhases = (
-				C49A40F42740802C00F4714C /* Sources */,
-				C49A40F52740802C00F4714C /* Frameworks */,
-				C49A40F62740802C00F4714C /* Resources */,
+				C49A415A27429AF900F4714C /* Sources */,
+				C49A415B27429AF900F4714C /* Frameworks */,
+				C49A415C27429AF900F4714C /* Resources */,
 			);
 			buildRules = (
 			);
@@ -118,25 +118,25 @@
 			);
 			name = notepad_ios;
 			productName = notepad_ios;
-			productReference = C49A40F82740802C00F4714C /* notepad_ios.app */;
+			productReference = C49A415E27429AF900F4714C /* notepad_ios.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		C49A40F02740802C00F4714C /* Project object */ = {
+		C49A415627429AF900F4714C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1310;
 				LastUpgradeCheck = 1310;
 				TargetAttributes = {
-					C49A40F72740802C00F4714C = {
+					C49A415D27429AF900F4714C = {
 						CreatedOnToolsVersion = 13.1;
 					};
 				};
 			};
-			buildConfigurationList = C49A40F32740802C00F4714C /* Build configuration list for PBXProject "notepad_ios" */;
+			buildConfigurationList = C49A415927429AF900F4714C /* Build configuration list for PBXProject "notepad_ios" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -144,48 +144,48 @@
 				en,
 				Base,
 			);
-			mainGroup = C49A40EF2740802C00F4714C;
-			productRefGroup = C49A40F92740802C00F4714C /* Products */;
+			mainGroup = C49A415527429AF900F4714C;
+			productRefGroup = C49A415F27429AF900F4714C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C49A40F72740802C00F4714C /* notepad_ios */,
+				C49A415D27429AF900F4714C /* notepad_ios */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		C49A40F62740802C00F4714C /* Resources */ = {
+		C49A415C27429AF900F4714C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C49A41032740802E00F4714C /* Preview Assets.xcassets in Resources */,
-				C49A41002740802E00F4714C /* Assets.xcassets in Resources */,
+				C49A416927429AFA00F4714C /* Preview Assets.xcassets in Resources */,
+				C49A416627429AFA00F4714C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		C49A40F42740802C00F4714C /* Sources */ = {
+		C49A415A27429AF900F4714C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C49A410F2740810000F4714C /* Note.swift in Sources */,
-				C49A410B274080B500F4714C /* UserData.swift in Sources */,
-				C49A410D274080E000F4714C /* NoteData.swift in Sources */,
-				C49A40FE2740802C00F4714C /* ContentView.swift in Sources */,
-				C49A41152740813A00F4714C /* NoteList.swift in Sources */,
-				C49A41142740813A00F4714C /* NoteDetail.swift in Sources */,
-				C49A41162740813A00F4714C /* NoteRow.swift in Sources */,
-				C49A40FC2740802C00F4714C /* notepad_iosApp.swift in Sources */,
+				C49A416427429AF900F4714C /* ContentView.swift in Sources */,
+				C49A417427429B9C00F4714C /* NoteData.swift in Sources */,
+				C49A417A27429E9100F4714C /* NoteDetail.swift in Sources */,
+				C49A416227429AF900F4714C /* notepad_iosApp.swift in Sources */,
+				C49A417627429D2700F4714C /* UserData.swift in Sources */,
+				C49A417227429B4600F4714C /* Note.swift in Sources */,
+				C49A417D2742A07C00F4714C /* NoteRow.swift in Sources */,
+				C49A417827429E0700F4714C /* NoteList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		C49A41042740802E00F4714C /* Debug */ = {
+		C49A416A27429AFA00F4714C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -246,7 +246,7 @@
 			};
 			name = Debug;
 		};
-		C49A41052740802E00F4714C /* Release */ = {
+		C49A416B27429AFA00F4714C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -301,7 +301,7 @@
 			};
 			name = Release;
 		};
-		C49A41072740802E00F4714C /* Debug */ = {
+		C49A416D27429AFA00F4714C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -329,7 +329,7 @@
 			};
 			name = Debug;
 		};
-		C49A41082740802E00F4714C /* Release */ = {
+		C49A416E27429AFA00F4714C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -360,25 +360,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C49A40F32740802C00F4714C /* Build configuration list for PBXProject "notepad_ios" */ = {
+		C49A415927429AF900F4714C /* Build configuration list for PBXProject "notepad_ios" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C49A41042740802E00F4714C /* Debug */,
-				C49A41052740802E00F4714C /* Release */,
+				C49A416A27429AFA00F4714C /* Debug */,
+				C49A416B27429AFA00F4714C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C49A41062740802E00F4714C /* Build configuration list for PBXNativeTarget "notepad_ios" */ = {
+		C49A416C27429AFA00F4714C /* Build configuration list for PBXNativeTarget "notepad_ios" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C49A41072740802E00F4714C /* Debug */,
-				C49A41082740802E00F4714C /* Release */,
+				C49A416D27429AFA00F4714C /* Debug */,
+				C49A416E27429AFA00F4714C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = C49A40F02740802C00F4714C /* Project object */;
+	rootObject = C49A415627429AF900F4714C /* Project object */;
 }
