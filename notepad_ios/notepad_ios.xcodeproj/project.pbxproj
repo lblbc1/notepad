@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		C49A416227429AF900F4714C /* notepad_iosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49A416127429AF900F4714C /* notepad_iosApp.swift */; };
-		C49A416427429AF900F4714C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49A416327429AF900F4714C /* ContentView.swift */; };
 		C49A416627429AFA00F4714C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C49A416527429AFA00F4714C /* Assets.xcassets */; };
 		C49A416927429AFA00F4714C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C49A416827429AFA00F4714C /* Preview Assets.xcassets */; };
 		C49A417227429B4600F4714C /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49A417127429B4600F4714C /* Note.swift */; };
@@ -22,7 +21,6 @@
 /* Begin PBXFileReference section */
 		C49A415E27429AF900F4714C /* notepad_ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = notepad_ios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C49A416127429AF900F4714C /* notepad_iosApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = notepad_iosApp.swift; sourceTree = "<group>"; };
-		C49A416327429AF900F4714C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		C49A416527429AFA00F4714C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C49A416827429AFA00F4714C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C49A417127429B4600F4714C /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
@@ -66,7 +64,6 @@
 				C49A417027429B2700F4714C /* views */,
 				C49A416F27429B1F00F4714C /* models */,
 				C49A416127429AF900F4714C /* notepad_iosApp.swift */,
-				C49A416327429AF900F4714C /* ContentView.swift */,
 				C49A416527429AFA00F4714C /* Assets.xcassets */,
 				C49A416727429AFA00F4714C /* Preview Content */,
 			);
@@ -171,7 +168,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C49A416427429AF900F4714C /* ContentView.swift in Sources */,
 				C49A417427429B9C00F4714C /* NoteData.swift in Sources */,
 				C49A417A27429E9100F4714C /* NoteDetail.swift in Sources */,
 				C49A416227429AF900F4714C /* notepad_iosApp.swift in Sources */,
