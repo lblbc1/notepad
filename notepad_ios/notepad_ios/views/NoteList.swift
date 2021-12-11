@@ -22,7 +22,10 @@ struct NoteList : View {
     }
     
     private func createNote() {
-        let newNote = Note(text: "")
+        var numberThree: Int = Int(arc4random_uniform(100))
+        print(numberThree)
+
+        let newNote = Note(text: String(numberThree))
         self.userData.notes.insert(newNote, at: 0)
     }
 }
