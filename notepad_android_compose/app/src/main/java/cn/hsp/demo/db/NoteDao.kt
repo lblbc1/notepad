@@ -1,7 +1,6 @@
 package cn.hsp.demo.db
 
 import androidx.room.*
-import cn.hsp.demo.db.Note
 
 /**
  * 厦门大学计算机专业 | 前华为工程师

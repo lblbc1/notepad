@@ -9,7 +9,7 @@ import kotlinx.coroutines.withContext
  * 包含：Java | 安卓 | 前端 | Flutter | iOS | 小程序 | 鸿蒙
  * 公众号：花生皮编程
  */
-class NoteRepository {
+object NoteRepository {
     private val noteDao = AppDatabase.getInstance().noteDao()
     suspend fun query(noteId: Int): Note {
         return withContext(Dispatchers.IO) { noteDao.query(noteId) }
@@ -19,9 +19,9 @@ class NoteRepository {
         return withContext(Dispatchers.IO) { noteDao.query() }
     }
 
-    suspend fun add(name: String) {
+    suspend fun add(content: String) {
         withContext(Dispatchers.IO) {
-            val note = Note(0, name)
+            val note = Note(0, content)
             noteDao.add(note)
         }
     }
@@ -30,7 +30,7 @@ class NoteRepository {
         withContext(Dispatchers.IO) { noteDao.update(note) }
     }
 
-    suspend fun del(id: Int) {
+    suspend fun delete(id: Int) {
         withContext(Dispatchers.IO) {
             val note = Note(id, "")
             noteDao.del(note)

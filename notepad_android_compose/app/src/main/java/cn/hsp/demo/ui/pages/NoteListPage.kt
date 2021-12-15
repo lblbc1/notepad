@@ -1,19 +1,43 @@
 package cn.hsp.demo.ui.pages
 
 import android.os.Bundle
+import android.util.Log
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.material.Card
-import androidx.compose.material.ExperimentalMaterialApi
-import androidx.compose.material.Text
+import androidx.compose.material.*
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.AddCircle
+import androidx.compose.material.icons.filled.ArrowBack
+import androidx.compose.material.icons.filled.Delete
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalLifecycleOwner
+import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+import androidx.constraintlayout.compose.ConstraintLayout
+import androidx.core.app.NotificationCompat
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.LifecycleObserver
+import androidx.lifecycle.OnLifecycleEvent
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
+import cn.hsp.demo.NOTE_CONTENT
 import cn.hsp.demo.NOTE_ID
 import cn.hsp.demo.PAGE_NOTE
+import cn.hsp.demo.R
+import cn.hsp.demo.db.Note
+import cn.hsp.demo.ui.theme.MainBgColor
+import cn.hsp.demo.ui.theme.TextColor
 import cn.hsp.demo.ui.vm.NoteListModel
 
 /**
@@ -30,23 +54,99 @@ fun NoteListPage(navController: NavController) {
     val state by viewModel.stateLiveData.observeAsState()
     val noteList by viewModel.noteListLiveData.observeAsState(listOf())
 
+    val lifecycleOwner = LocalLifecycleOwner.current
+    DisposableEffect(key1 = Unit) {
+        val observer = object : LifecycleObserver {
+            @OnLifecycleEvent(Lifecycle.Event.ON_RESUME)
+            fun onResume() {
+                viewModel.query()
+            }
+        }
+        lifecycleOwner.lifecycle.addObserver(observer)
+        onDispose { lifecycleOwner.lifecycle.removeObserver(observer) }
+    }
+
     LoadingPage(
-        pageState = state!!,
-        loadInit = { viewModel.query() }) {
-        Box(Modifier.fillMaxSize()) {
-            LazyColumn {
-                items(noteList.size)
-                { index ->
-                    val note = noteList[index]
-                    Card(onClick = {
-                        val bundle = Bundle().apply { putInt(NOTE_ID, note.id) }
-                        navController.currentBackStackEntry?.replaceArguments(bundle)
-                        navController.navigate(PAGE_NOTE)
-                    }) {
-                        Text(text = noteList[index].content)
+        pageState = state!!
+    ) {
+        ConstraintLayout() {
+            val (addIcon) = createRefs()
+            Column(Modifier.fillMaxSize()) {
+                BuildTitle()
+                BuildNoteList(noteList, navController)
+            }
+            Icon(
+                Icons.Default.AddCircle,
+                null,
+                Modifier
+                    .constrainAs(addIcon) {
+                        end.linkTo(parent.end)
+                        bottom.linkTo(parent.bottom)
                     }
-                }
+                    .width(100.dp)
+                    .height(100.dp)
+                    .clickable(onClick = {
+                        gotoNotePage(null, navController)
+                    })
+                    .padding(20.dp),
+                tint = MainBgColor
+            )
+        }
+
+    }
+}
+
+@ExperimentalMaterialApi
+@Composable
+private fun BuildNoteList(
+    noteList: List<Note>,
+    navController: NavController
+) {
+    LazyColumn(
+        modifier = Modifier.padding(10.dp)
+    ) {
+        items(noteList.size)
+        { index ->
+            val note = noteList[index]
+            Card(
+                backgroundColor = Color.Transparent,
+                elevation = 0.dp,
+                modifier = Modifier
+                    .padding(bottom = 10.dp)
+                    .fillMaxWidth(),
+                onClick = {
+                    gotoNotePage(note, navController)
+                }) {
+                Text(text = noteList[index].content, maxLines = 1)
             }
         }
     }
+}
+
+private fun gotoNotePage(
+    note: Note?,
+    navController: NavController
+) {
+    note?.let {
+        val bundle = Bundle().apply {
+            putInt(NOTE_ID, note.id)
+            putString(NOTE_CONTENT, note.content)
+        }
+        navController.currentBackStackEntry?.replaceArguments(bundle)
+    }
+    navController.navigate(PAGE_NOTE)
+}
+
+@Composable
+private fun BuildTitle() {
+    Text(
+        text = "记事本-花生皮编程",
+        modifier = Modifier
+            .background(MainBgColor)
+            .padding(10.dp)
+            .fillMaxWidth(),
+        color = TextColor,
+        fontSize = 18.sp,
+        fontWeight = FontWeight.W500,
+    )
 }

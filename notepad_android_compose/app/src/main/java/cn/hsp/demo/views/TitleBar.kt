@@ -15,6 +15,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import cn.hsp.demo.ui.theme.MainBgColor
 import cn.hsp.demo.ui.theme.TextColor
 
 @Composable
@@ -28,7 +29,7 @@ fun TitleBar(
         modifier = Modifier
             .fillMaxWidth()
             .height(40.dp)
-            .background(TextColor)
+            .background(MainBgColor)
     ) {
         Row(modifier = Modifier.fillMaxSize()) {
             if (onBack != null) {
@@ -38,7 +39,7 @@ fun TitleBar(
                     Modifier
                         .clickable(onClick = onBack)
                         .align(Alignment.CenterVertically)
-                        .padding(12.dp),
+                        .padding(start=12.dp),
                     tint = TextColor
                 )
             }
@@ -62,7 +63,7 @@ fun TitleBar(
             modifier = Modifier
                 .align(Alignment.Center)
                 .padding(horizontal = 40.dp),
-//            color = HamTheme.colors.mainColor,
+            color = TextColor,
             textAlign = TextAlign.Center,
             fontSize = 18.sp,
             fontWeight = FontWeight.W500,

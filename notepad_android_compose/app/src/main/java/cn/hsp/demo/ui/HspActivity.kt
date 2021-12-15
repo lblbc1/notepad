@@ -4,9 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.material.ExperimentalMaterialApi
-import androidx.compose.material.Scaffold
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -16,8 +14,6 @@ import cn.hsp.demo.PAGE_NOTE
 import cn.hsp.demo.ui.pages.NoteListPage
 import cn.hsp.demo.ui.pages.NotePage
 import cn.hsp.demo.ui.theme.HspDemoTheme
-import com.google.accompanist.insets.navigationBarsPadding
-import com.google.accompanist.insets.statusBarsPadding
 
 /**
  * 厦门大学计算机专业 | 前华为工程师

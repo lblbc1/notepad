@@ -3,9 +3,6 @@ package cn.hsp.demo
 import android.annotation.SuppressLint
 import android.app.Application
 import android.content.Context
-import cn.hsp.demo.db.NoteRepository
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
 
 /**
  * 厦门大学计算机专业 | 前华为工程师
