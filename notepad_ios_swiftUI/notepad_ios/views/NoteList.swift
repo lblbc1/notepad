@@ -16,7 +16,7 @@ struct NoteList : View {
                     NoteRow(note: note)
                 }
             }
-                .navigationBarTitle(Text("花生皮笔记"), displayMode: .large)
+                .navigationBarTitle(Text("记事本-花生皮编程"), displayMode: .inline)
                 .navigationBarItems(trailing: Button(action: self.createNote, label: { Text("新建") }))
         }
     }
