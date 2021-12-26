@@ -42,6 +42,7 @@
         ohos:width="match_parent"
         ohos:hint="请输入内容"
         ohos:scrollable="true"
+        ohos:text_alignment="start"
         ohos:text_size="20fp"
         ohos:top_padding="20vp"/>
 
