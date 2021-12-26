@@ -12,11 +12,12 @@
 
     <Image
         ohos:id="$+id:add_image"
-        ohos:height="match_content"
-        ohos:width="match_content"
+        ohos:height="50vp"
+        ohos:width="50vp"
         ohos:bottom_margin="50vp"
         ohos:end_margin="30vp"
         ohos:image_src="$media:ic_add"
-        ohos:layout_alignment="right|bottom"/>
+        ohos:layout_alignment="right|bottom"
+        ohos:scale_mode="zoom_center"/>
 
 </StackLayout>
