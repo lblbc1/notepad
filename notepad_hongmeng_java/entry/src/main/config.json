@@ -10,7 +10,7 @@
   "deviceConfig": {},
   "module": {
     "package": "cn.hsp.notepad",
-    "name": ".MyApplication",
+    "name": "cn.hsp.notepad.HspApp",
     "mainAbility": "cn.hsp.notepad.ui.NoteListAbility",
     "deviceType": [
       "phone"
