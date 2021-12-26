@@ -3,7 +3,7 @@
     package="cn.hsp.notepad">
 
     <application
-        android:name="cn.hsp.notepad.App"
+        android:name="cn.hsp.notepad.HspApp"
         android:allowBackup="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"

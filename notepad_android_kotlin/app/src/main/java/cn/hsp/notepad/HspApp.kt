@@ -9,7 +9,7 @@ import android.content.Context
  * 包含：Java | 安卓 | 前端 | Flutter | iOS | 小程序 | 鸿蒙
  * 公众号：花生皮编程
  */
-class App : Application() {
+class HspApp : Application() {
 
     override fun onCreate() {
         super.onCreate()

@@ -4,7 +4,7 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import cn.hsp.notepad.App
+import cn.hsp.notepad.HspApp
 /**
  * 厦门大学计算机专业 | 前华为工程师
  * 专注《零基础学编程系列》https://cxyxy.blog.csdn.net/article/details/121134634
@@ -20,7 +20,7 @@ abstract class AppDatabase : RoomDatabase() {
         private const val DATABASE_NAME = "note"
 
         @Volatile
-        private var instance = buildDatabase(App.context)
+        private var instance = buildDatabase(HspApp.context)
 
         fun getInstance() = instance
 
