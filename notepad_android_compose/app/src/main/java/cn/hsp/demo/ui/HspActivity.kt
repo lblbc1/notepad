@@ -23,7 +23,7 @@ import cn.hsp.demo.ui.theme.HspDemoTheme
  */
 
 @ExperimentalMaterialApi
-class MainActivity : ComponentActivity() {
+class HspActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {

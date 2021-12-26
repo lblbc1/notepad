@@ -16,7 +16,6 @@ class NoteListModel : BaseViewModel() {
 
     fun query() {
         launch {
-            Log.v("ddfd","query")
             noteListLiveData.value = NoteRepository.query()
         }
     }
