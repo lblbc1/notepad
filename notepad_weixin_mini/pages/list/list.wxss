@@ -1,0 +1,33 @@
+.page-wrapper {
+    margin: 0;
+    font-size: 28rpx;
+    line-height: 1.5;
+    color: #333;
+    background-color: #efefef;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+    -webkit-tap-highlight-color: transparent;
+}
+.row{
+  height: 100rpx;
+  padding-left: 10rpx;
+  padding-right: 10rpx;
+  background-color: #fff;
+}
+.content{
+  font-size: 40rpx;
+  color: #333;
+}
+.split{
+  background-color: #e5e5e5;
+  height: 2rpx;
+  margin-left: 10rpx;
+  padding-right: 10rpx;
+}
+.float-img{
+  position: fixed;
+  bottom: 50rpx;
+  right: 50rpx;
+  height: 100rpx;
+  width: 100rpx;
+}
