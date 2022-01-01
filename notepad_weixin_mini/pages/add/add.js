@@ -8,9 +8,14 @@ var util = require('../../utils/util.js')
 
 Page({
   data: {
-    content: ""
+    content: "",
+    date: "2022-01-01"
   },
-  methods: {
+  bindDateChange: function (e) {
+    console.log('picker发送选择改变，携带值为', e.detail.value)
+    this.setData({
+      date: e.detail.value
+    })
   },
   addData(e) {
     var dataList = wx.getStorageSync('list') || { index: 0, list: [], time: 0 };
