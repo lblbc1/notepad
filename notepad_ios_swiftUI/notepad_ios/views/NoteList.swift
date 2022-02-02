@@ -22,10 +22,9 @@ struct NoteList : View {
     }
     
     private func createNote() {
-        var numberThree: Int = Int(arc4random_uniform(100))
-        print(numberThree)
+        var randomId: Int = Int(arc4random_uniform(100))
 
-        let newNote = Note(text: String(numberThree))
+        let newNote = Note(text: String(randomId))
         self.userData.notes.insert(newNote, at: 0)
     }
 }
@@ -33,12 +32,7 @@ struct NoteList : View {
 #if DEBUG
 struct NoteList_Previews : PreviewProvider {
     static var previews: some View {
-        ForEach(["iPhone SE", "iPhone XS Max"], id: \.self) { deviceName in
-            NoteList()
-                .environmentObject(UserData())
-                .previewDevice(PreviewDevice(rawValue: deviceName))
-                .previewDisplayName(deviceName)
-        }
+        NoteList().environmentObject(UserData())
     }
 }
 #endif
