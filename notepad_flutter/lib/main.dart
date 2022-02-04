@@ -8,7 +8,7 @@ import 'edit_note.dart';
 /// 厦门大学计算机专业 | 前华为工程师
 /// 专注《零基础学编程系列》https://cxyxy.blog.csdn.net/article/details/121134634
 /// 包含：Java | 安卓 | 前端 | Flutter | iOS | 小程序 | 鸿蒙
-/// 公众号：花生皮编程
+/// 公众号：蓝不蓝编程
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: '花生皮编程',
+      title: '蓝不蓝编程',
       home: NoteListPage(),
     );
   }
@@ -28,7 +28,7 @@ class NoteListPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: '花生皮编程',
+      title: '蓝不蓝编程',
       home: NoteListWidget(),
     );
   }
