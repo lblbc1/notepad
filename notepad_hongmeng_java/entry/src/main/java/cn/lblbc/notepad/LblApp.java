@@ -1,6 +1,6 @@
-package cn.hsp.notepad;
+package cn.lblbc.notepad;
 
-import cn.hsp.notepad.db.DbHelper;
+import cn.lblbc.notepad.db.DbHelper;
 import ohos.aafwk.ability.AbilityPackage;
 
 /**
@@ -9,7 +9,7 @@ import ohos.aafwk.ability.AbilityPackage;
  * 包含：Java | 安卓 | 前端 | Flutter | iOS | 小程序 | 鸿蒙
  * 公众号：蓝不蓝编程
  */
-public class HspApp extends AbilityPackage {
+public class LblApp extends AbilityPackage {
     @Override
     public void onInitialize() {
         super.onInitialize();

@@ -1,4 +1,4 @@
-package cn.hsp.notepad.db;
+package cn.lblbc.notepad.db;
 
 import ohos.app.Context;
 import ohos.data.DatabaseHelper;
@@ -26,7 +26,7 @@ public class DbHelper {
 
     public void initDb(Context context) {
         DatabaseHelper databaseHelper = new DatabaseHelper(context);
-        ormContext = databaseHelper.getOrmContext("hspDb", "hspDb.db", NoteDatabase.class);
+        ormContext = databaseHelper.getOrmContext("lblDb", "lblDb.db", NoteDatabase.class);
     }
 
     public void add(String content) {

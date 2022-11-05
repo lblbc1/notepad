@@ -1,7 +1,7 @@
-package cn.hsp.notepad.ui;
+package cn.lblbc.notepad.ui;
 
-import cn.hsp.notepad.ResourceTable;
-import cn.hsp.notepad.db.DbHelper;
+import cn.lblbc.notepad.ResourceTable;
+import cn.lblbc.notepad.db.DbHelper;
 import ohos.aafwk.ability.Ability;
 import ohos.aafwk.content.Intent;
 import ohos.agp.components.TextField;

@@ -1,4 +1,4 @@
-package cn.hsp.notepad.db;
+package cn.lblbc.notepad.db;
 
 import ohos.data.orm.OrmObject;
 import ohos.data.orm.annotation.Entity;

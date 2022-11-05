@@ -1,7 +1,7 @@
-package cn.hsp.notepad.ui;
+package cn.lblbc.notepad.ui;
 
-import cn.hsp.notepad.ResourceTable;
-import cn.hsp.notepad.db.Note;
+import cn.lblbc.notepad.ResourceTable;
+import cn.lblbc.notepad.db.Note;
 import ohos.aafwk.content.Intent;
 import ohos.aafwk.content.Operation;
 import ohos.agp.components.*;
@@ -61,7 +61,7 @@ public class NoteListItemProvider extends BaseItemProvider {
     private void gotoEditNote(Context context, long noteId) {
         Intent newIntent = new Intent();
         Operation operation = new Intent.OperationBuilder()
-                .withBundleName("cn.hsp.notepad")
+                .withBundleName("cn.lblbc.notepad")
                 .withAbilityName(EditNoteAbility.class.getCanonicalName())
                 .build();
         newIntent.setOperation(operation);

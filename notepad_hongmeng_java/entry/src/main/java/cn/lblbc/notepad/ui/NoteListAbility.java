@@ -1,7 +1,7 @@
-package cn.hsp.notepad.ui;
+package cn.lblbc.notepad.ui;
 
-import cn.hsp.notepad.ResourceTable;
-import cn.hsp.notepad.db.DbHelper;
+import cn.lblbc.notepad.ResourceTable;
+import cn.lblbc.notepad.db.DbHelper;
 import ohos.aafwk.ability.Ability;
 import ohos.aafwk.content.Intent;
 import ohos.aafwk.content.Operation;
@@ -35,7 +35,7 @@ public class NoteListAbility extends Ability {
         findComponentById(ResourceTable.Id_add_image).setClickedListener(component -> {
             Intent newIntent = new Intent();
             Operation operation = new Intent.OperationBuilder()
-                    .withBundleName("cn.hsp.notepad")
+                    .withBundleName("cn.lblbc.notepad")
                     .withAbilityName(AddNoteAbility.class.getCanonicalName())
                     .build();
             newIntent.setOperation(operation);

@@ -1,7 +1,7 @@
 {
   "app": {
-    "bundleName": "cn.hsp.notepad",
-    "vendor": "hsp",
+    "bundleName": "cn.lblbc.notepad",
+    "vendor": "lblbc",
     "version": {
       "code": 1000000,
       "name": "1.0.0"
@@ -9,9 +9,9 @@
   },
   "deviceConfig": {},
   "module": {
-    "package": "cn.hsp.notepad",
-    "name": "cn.hsp.notepad.HspApp",
-    "mainAbility": "cn.hsp.notepad.ui.NoteListAbility",
+    "package": "cn.lblbc.notepad",
+    "name": "cn.lblbc.notepad.LblApp",
+    "mainAbility": "cn.lblbc.notepad.ui.NoteListAbility",
     "deviceType": [
       "phone"
     ],
@@ -35,7 +35,7 @@
         ],
         "orientation": "unspecified",
         "visible": true,
-        "name": "cn.hsp.notepad.ui.NoteListAbility",
+        "name": "cn.lblbc.notepad.ui.NoteListAbility",
         "icon": "$media:icon",
         "description": "$string:mainability_description",
         "label": "$string:entry_MainAbility",
@@ -44,7 +44,7 @@
       },
       {
         "orientation": "unspecified",
-        "name": "cn.hsp.notepad.ui.AddNoteAbility",
+        "name": "cn.lblbc.notepad.ui.AddNoteAbility",
         "icon": "$media:icon",
         "description": "$string:entry_MainAbility",
         "label": "$string:entry_MainAbility",
@@ -53,7 +53,7 @@
       },
       {
         "orientation": "unspecified",
-        "name": "cn.hsp.notepad.ui.EditNoteAbility",
+        "name": "cn.lblbc.notepad.ui.EditNoteAbility",
         "icon": "$media:icon",
         "description": "$string:entry_MainAbility",
         "label": "$string:entry_MainAbility",
