@@ -82,7 +82,7 @@ class _EditNotePageState extends State<EditNotePage> {
         Expanded(
             child: TextField(
           maxLines: null,
-          decoration: const InputDecoration(hintText: "请输入笔记", border: InputBorder.none),
+          decoration: const InputDecoration(hintText: "请输入内容", border: InputBorder.none),
           controller: _contentController,
         )),
       ],
