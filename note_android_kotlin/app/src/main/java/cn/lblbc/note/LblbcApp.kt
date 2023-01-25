@@ -12,7 +12,7 @@ import cn.lblbc.lib.utils.ToastUtil
  * 包含：Java | 安卓 | 前端 | Flutter | iOS | 小程序 | 鸿蒙
  * 公众号：蓝不蓝编程
  */
-class App : Application() {
+class LblbcApp : Application() {
 
     override fun onCreate() {
         super.onCreate()
