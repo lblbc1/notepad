@@ -1,30 +1,21 @@
-# 背景
-前面已输出多个系列：
-《[十余种编程语言做个计算器](https://cxyxy.blog.csdn.net/article/details/128761660)》
-《[十余种编程语言写2048小游戏](https://cxyxy.blog.csdn.net/article/details/128696358)》
-《[17种编程语言+10种排序算法](https://cxyxy.blog.csdn.net/article/details/128760848)》
-《[十余种编程语言写博客系统](https://cxyxy.blog.csdn.net/article/details/128755326)》
-《[十余种编程语言写云笔记](https://cxyxy.blog.csdn.net/article/details/128760968)》
-本系列对比云笔记，将更为简化，去掉了网络调用，采用本地数据库进行数据存储。
-# 目标
-为编程初学者打造入门学习项目，使用各种主流编程语言来实现。
+# Introduction
+Note App for programming starters.
 ![](https://img-blog.csdnimg.cn/faea1470ad3b4e8eba3b093d261d637d.png)
-左侧为前端版本：安卓、iOS、鸿蒙、Flutter、Vue、uni-app。
-右侧为服务器端版本：Java、Python、Go、PHP、NodeJS
+Left：Android、iOS、Huawei HarmonyOS、Flutter、Vue、uni-app。  
+Right：Java、Python、Go、PHP、NodeJS
 
-# 鸿蒙Java版效果图
-![](https://img-blog.csdnimg.cn/8dfefa3877864bbf8f6c3ab3df9be809.png)
-# 开发工具
-开发工具：[下载DevEco Studio](https://developer.harmonyos.com/cn/develop/deveco-studio)
 
-# 工程截图
-![](https://img-blog.csdnimg.cn/50d9270fa6d045c79b612f64e173182e.png)
+# Preview
+![](https://img-blog.csdnimg.cn/0ffe6953d3d745f594c2db05c36e4046.png)
 
-# 开源地址
+# Open Source
 [https://gitee.com/lblbc/notepad](https://gitee.com/lblbc/notepad)
 
-# 关于
-厦门大学计算机专业|华为八年高级工程师     
-专注《零基础学编程系列》  http://lblbc.cn/blog  
-包含：Java | 安卓 | 前端 | Flutter | iOS | 小程序 | 鸿蒙  
-公众号：蓝不蓝编程  
+
+# About Me
+Graduated from China Xiamen University  
+Ever worked for Huawei as software developer  
+focus on programming learning. http://lblbc.cn/blog  
+Including：Android(Java、Kotlin)、iOS(SwiftUI)、Flutter(Dart)、Window Desktop(C#)、Front End(WeChat mini-program、uni-app、vue)、Back End（Java、Kotlin、NodeJS、Python、PHP、Go、C、C++）、HarmonyOS(Huawei)  
+Follow me on China wechat：蓝不蓝编程  
+![](https://img-blog.csdnimg.cn/4c62bfb4cca540b1a26825f2b1a8af7e.png)
