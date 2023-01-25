@@ -5,7 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import cn.lblbc.note.R
-import cn.lblbc.note.network.response.Note
+import cn.lblbc.note.db.Note
 import kotlinx.android.synthetic.main.item_note.view.*
 
 /**

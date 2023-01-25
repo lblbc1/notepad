@@ -1,10 +1,9 @@
 package cn.lblbc.note.viewmodel
 
 import androidx.lifecycle.MutableLiveData
-import cn.lblbc.lib.utils.ToastUtil
 import cn.lblbc.note.base.BaseViewModel
-import cn.lblbc.note.network.NoteRepo
-import cn.lblbc.note.network.response.Note
+import cn.lblbc.note.db.Note
+import cn.lblbc.note.db.NoteRepo
 
 /**
  * 厦门大学计算机专业 | 前华为工程师
@@ -24,7 +23,7 @@ class NoteViewModel : BaseViewModel() {
     ) {
         launch(
             {
-                note.value = noteRepo.queryNote(id)?.data
+                note.value = noteRepo.queryNoteList(id)
                 onSuccess?.invoke()
             },
             { onFailure?.invoke(it.message ?: "") },
@@ -40,14 +39,7 @@ class NoteViewModel : BaseViewModel() {
     ) {
         launch(
             {
-                val resp = noteRepo.addNote(content)
-                resp?.let {
-                    if (it.isSuccess()) {
-                        onSuccess?.invoke()
-                    } else {
-                        ToastUtil.toast(it.msg)
-                    }
-                }
+                noteRepo.addNote(content)
             },
             { onFailure?.invoke(it.message ?: "") },
             { onComplete?.invoke() })
@@ -62,7 +54,8 @@ class NoteViewModel : BaseViewModel() {
     ) {
         launch(
             {
-                noteRepo.modifyNote(id, content)
+                val note = Note(id,content)
+                noteRepo.modifyNote(note)
                 onSuccess?.invoke()
             },
             { onFailure?.invoke(it.message ?: "") },

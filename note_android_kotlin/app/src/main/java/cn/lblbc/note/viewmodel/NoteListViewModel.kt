@@ -2,8 +2,9 @@ package cn.lblbc.note.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import cn.lblbc.note.base.BaseViewModel
-import cn.lblbc.note.network.NoteRepo
-import cn.lblbc.note.network.response.Note
+import cn.lblbc.note.db.Note
+import cn.lblbc.note.db.NoteRepo
+
 /**
  * 厦门大学计算机专业 | 前华为工程师
  * 专注《零基础学编程系列》  http://lblbc.cn/blog
@@ -15,16 +16,11 @@ class NoteListViewModel : BaseViewModel() {
     val dataList: MutableLiveData<List<Note>> = MutableLiveData()
 
     fun queryNoteList(
-        onSuccess: (() -> Unit)? = null,
-        onFailure: ((msg: String) -> Unit)? = null,
-        onComplete: (() -> Unit)? = null
+        onSuccess: (() -> Unit)? = null, onFailure: ((msg: String) -> Unit)? = null, onComplete: (() -> Unit)? = null
     ) {
-        launch(
-            {
-                dataList.value = noteRepo.queryNoteList()?.data
-                onSuccess?.invoke()
-            },
-            { onFailure?.invoke(it.message ?: "") },
-            { onComplete?.invoke() })
+        launch({
+            dataList.value = noteRepo.queryNoteList()
+            onSuccess?.invoke()
+        }, { onFailure?.invoke(it.message ?: "") }, { onComplete?.invoke() })
     }
 }

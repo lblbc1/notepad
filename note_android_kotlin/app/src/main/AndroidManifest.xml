@@ -25,9 +25,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name="cn.lblbc.note.ui.activity.LoginActivity"
-            android:theme="@style/LblTheme" />
         <activity android:name="cn.lblbc.note.ui.activity.EditNoteActivity" />
         <activity android:name="cn.lblbc.note.ui.activity.AddNoteActivity" />
     </application>

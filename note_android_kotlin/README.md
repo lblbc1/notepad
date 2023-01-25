@@ -8,9 +8,7 @@ Right：Java、Python、Go、PHP、NodeJS
 # Preview
 ![](https://img-blog.csdnimg.cn/e2c5c71ed5f44e389fe849a2b4711d9c.png)
 # Server Features
- 1. Register
- 2. Login
- 3. Add\Delete\Modify\Query note
+ Add\Delete\Modify\Query note
 
 # Open Source
 [https://gitee.com/lblbc/cloud-note](https://gitee.com/lblbc/cloud-note)

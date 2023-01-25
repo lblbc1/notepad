@@ -2,15 +2,13 @@ package cn.lblbc.note.ui.activity
 
 import android.content.Intent
 import androidx.lifecycle.Observer
+import cn.lblbc.note.R
 import cn.lblbc.note.base.BaseVmActivity
-import cn.lblbc.note.network.response.Note
+import cn.lblbc.note.db.Note
 import cn.lblbc.note.ui.adapter.NoteListAdapter
-import cn.lblbc.note.utils.Constants
 import cn.lblbc.note.utils.Constants.EXTRA_KEY_NOTE_CONTENT
 import cn.lblbc.note.utils.Constants.EXTRA_KEY_NOTE_ID
 import cn.lblbc.note.viewmodel.NoteListViewModel
-import cn.lblbc.lib.utils.SpUtil
-import cn.lblbc.note.R
 import kotlinx.android.synthetic.main.activity_note_list.*
 
 /**
@@ -25,18 +23,8 @@ class NoteListActivity : BaseVmActivity<NoteListViewModel>() {
     override fun layoutResId(): Int = R.layout.activity_note_list
 
     override fun initView() {
-        if (isLoggedIn()) {
-            rv.adapter = adapter
-            adapter.setOnItemClick(this::onItemClick)
-        } else {
-            startActivity(Intent(this@NoteListActivity, LoginActivity::class.java))
-            finish()
-        }
-    }
-
-    private fun isLoggedIn(): Boolean {
-        var token = SpUtil.get(Constants.SP_KEY_TOKEN, "")
-        return !token.isNullOrEmpty()
+        rv.adapter = adapter
+        adapter.setOnItemClick(this::onItemClick)
     }
 
     override fun initData() {
