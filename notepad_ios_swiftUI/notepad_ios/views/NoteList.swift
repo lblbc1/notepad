@@ -22,8 +22,7 @@ struct NoteList : View {
     }
     
     private func createNote() {
-        var randomId: Int = Int(arc4random_uniform(100))
-
+        let randomId: Int = Int(arc4random_uniform(100))
         let newNote = Note(text: String(randomId))
         self.userData.notes.insert(newNote, at: 0)
     }
