@@ -12,14 +12,13 @@
 左侧为前端版本：安卓、iOS、鸿蒙、Flutter、Vue、uni-app。
 右侧为服务器端版本：Java、Python、Go、PHP、NodeJS
 
-# Flutter版效果图
-![](https://img-blog.csdnimg.cn/5e30a0c50e9c40559e639f53b4cb77a6.png)
-
+# 鸿蒙Java版效果图
+![](https://img-blog.csdnimg.cn/8dfefa3877864bbf8f6c3ab3df9be809.png)
 # 开发工具
-开发工具：[下载IntelliJ IDEA](https://cxyxy.blog.csdn.net/article/details/128722658)
+开发工具：[下载DevEco Studio](https://developer.harmonyos.com/cn/develop/deveco-studio)
 
 # 工程截图
-![](https://img-blog.csdnimg.cn/71305faacf1c4091a531ca03e4bae4e0.png)
+![](https://img-blog.csdnimg.cn/50d9270fa6d045c79b612f64e173182e.png)
 
 # 开源地址
 [https://gitee.com/lblbc/notepad](https://gitee.com/lblbc/notepad)
