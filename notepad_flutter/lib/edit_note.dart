@@ -10,7 +10,7 @@ import 'db_helper.dart';
 class EditNotePage extends StatefulWidget {
   final int noteId;
 
-  EditNotePage({Key? key, required this.noteId}) : super(key: key);
+  const EditNotePage({Key? key, required this.noteId}) : super(key: key);
 
   @override
   createState() => _EditNotePageState(noteId);
@@ -19,7 +19,7 @@ class EditNotePage extends StatefulWidget {
 class _EditNotePageState extends State<EditNotePage> {
   int _noteId = 0;
   final NoteDatabase _noteDataBase = NoteDatabase();
-  TextEditingController _contentController = TextEditingController();
+  final TextEditingController _contentController = TextEditingController();
 
   _EditNotePageState(int noteId) {
     _noteId = noteId;
@@ -69,7 +69,7 @@ class _EditNotePageState extends State<EditNotePage> {
         ],
       ),
       body: Center(
-        child: Container(margin: EdgeInsets.fromLTRB(20, 20, 20, 20), child: buildColumn()),
+        child: Container(margin: const EdgeInsets.fromLTRB(20, 20, 20, 20), child: buildColumn()),
       ),
     );
   }

@@ -9,25 +9,27 @@ import 'edit_note.dart';
 /// 专注《零基础学编程系列》  http://lblbc.cn/blog
 /// 包含：Java | 安卓 | 前端 | Flutter | iOS | 小程序 | 鸿蒙
 /// 公众号：蓝不蓝编程
-void main() => runApp(MyApp());
+void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: '蓝不蓝编程',
+      title: '记事本-蓝不蓝编程',
       home: NoteListPage(),
     );
   }
 }
 
 class NoteListPage extends StatelessWidget {
-  const NoteListPage();
+  const NoteListPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       title: '蓝不蓝编程',
       home: NoteListWidget(),
     );
@@ -35,7 +37,7 @@ class NoteListPage extends StatelessWidget {
 }
 
 class NoteListWidget extends StatefulWidget {
-  NoteListWidget();
+  const NoteListWidget({Key? key}) : super(key: key);
 
   @override
   createState() => _NoteListState();
@@ -54,11 +56,11 @@ class _NoteListState extends State<NoteListWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("蓝不蓝云笔记"),
+        title: const Text("记事本-蓝不蓝编程"),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: gotoAddNotePage,
-        child: Icon(Icons.add),
+        child: const Icon(Icons.add),
       ),
       body: Center(
         child: getBody(),
@@ -67,7 +69,7 @@ class _NoteListState extends State<NoteListWidget> {
   }
 
   gotoAddNotePage() {
-    Navigator.push(context, MaterialPageRoute(builder: (context) => AddNotePage())).then((value) => queryData());
+    Navigator.push(context, MaterialPageRoute(builder: (context) => const AddNotePage())).then((value) => queryData());
   }
 
   queryData() async {
@@ -82,7 +84,7 @@ class _NoteListState extends State<NoteListWidget> {
 
   getItem(note) {
     var row = Container(
-      margin: EdgeInsets.all(4.0),
+      margin: const EdgeInsets.all(4.0),
       child: InkWell(
         onTap: () {
           onRowClick(note);
@@ -100,7 +102,7 @@ class _NoteListState extends State<NoteListWidget> {
       children: <Widget>[
         Expanded(
             child: Container(
-          margin: EdgeInsets.only(left: 8.0),
+          margin: const EdgeInsets.only(left: 8.0),
           height: 40.0,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -108,7 +110,7 @@ class _NoteListState extends State<NoteListWidget> {
             children: <Widget>[
               Text(
                 note.content,
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 18.0,
                 ),
                 maxLines: 1,
@@ -130,8 +132,8 @@ class _NoteListState extends State<NoteListWidget> {
     }
   }
 
-  onRowClick(Note onte) {
-    Navigator.push(context, MaterialPageRoute(builder: (context) => EditNotePage(noteId: onte.id)))
+  onRowClick(Note note) {
+    Navigator.push(context, MaterialPageRoute(builder: (context) => EditNotePage(noteId: note.id)))
         .then((value) => queryData());
   }
 }

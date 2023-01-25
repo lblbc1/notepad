@@ -23,7 +23,7 @@ class _AddNotePageState extends State<AddNotePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("新建笔记"),
+        title: const Text("新建"),
         leading: IconButton(
           icon: const Icon(Icons.arrow_back),
           onPressed: () {
@@ -53,7 +53,7 @@ class _AddNotePageState extends State<AddNotePage> {
         Expanded(
             child: TextField(
           maxLines: null,
-          decoration: const InputDecoration.collapsed(hintText: "请输入笔记", border: InputBorder.none),
+          decoration: const InputDecoration.collapsed(hintText: "请输入内容", border: InputBorder.none),
           controller: _contentController,
         )),
       ],
